@@ -35,6 +35,7 @@
     width: 140px;
     height: 40px;
     background-color: #CD7F78;
+    color: #fff;
     border: none;
     border-radius: 7px;
     font-size: inherit;
@@ -46,7 +47,7 @@
     margin-bottom: 5px;
 }
 #tela-login h3{
-    color: #fff;
+    color: #9c9c9c;
     font-weight: 200;
     font-size: 25px;
 }
