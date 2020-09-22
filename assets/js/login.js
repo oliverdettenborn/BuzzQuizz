@@ -38,6 +38,7 @@ function enviarUsuario(){
 
 function processarSucessoLogin(resposta){
     salvarToken(resposta.data.token);
+    pegarMeusQuizz();
     trocarDeTela("#tela-login","#tela-usuario");
 }
 
