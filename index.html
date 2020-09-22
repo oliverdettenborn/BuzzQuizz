@@ -23,14 +23,15 @@
     <section id="tela-login">
         <h1>BuzzQuizz</h1>
         <h3>O Quizz que você Quizzer</h3>
-        <form action="post">
+        <form>
             <input type="email" id="email" placeholder="E-mail">
-            <input type="password" id="password" placeholder="Senha">
-            <button type="submit" onclick="entrar()">Entrar</button>
+            <input type="password" id="senha" placeholder="Senha">
+            <button onclick="entrar(this)" onkeypress="pressionarEnter(this)">Entrar</button>
         </form>
     </section>
 
     <!--script aplicado nas diferentes seções-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/js/login.js"></script>
     <script src="assets/js/telaUsuario.js"></script>
     <script src="assets/js/criacaoQuizz.js"></script>
