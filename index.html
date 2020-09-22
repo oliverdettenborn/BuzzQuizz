@@ -34,11 +34,27 @@
     <section id="tela-usuario">
         <header>BuzzQuizz</header>
         <div class="container">
-            <div id="criar-quizz">
+            <div id="criar-quizz" onclick="criarQuizz()">
                 Novo Quizz
                 <ion-icon name="add-circle"></ion-icon>
             </div>
         </div>
+    </section>
+
+    <section id="tela-criacao">
+        <header>BuzzQuizz</header>
+        <form>
+            <input type="text" id="titulo" placeholder="Digite o título do seu quizz">
+
+            <div id="perguntas"></div>
+            <ion-icon name="add-circle" onclick="adicionarPergunta()"></ion-icon>
+
+            <div id="niveis"></div>
+            <ion-icon name="add-circle" onclick="adicionarNivel()"></ion-icon>
+
+            
+            <button onclick="tratamentoDosDados()">Publicar</button>
+        </form>
     </section>
 
     <!--script aplicado nas diferentes seções-->
