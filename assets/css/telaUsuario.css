@@ -3,10 +3,11 @@
     color: white;
 }
 #tela-usuario .container{
-    margin: 45px 14% 10px 14%;
+    margin: 45px auto 10px auto;
+    width: calc(100% - 300px);
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 #tela-usuario .container > div{
