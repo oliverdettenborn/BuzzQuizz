@@ -2,16 +2,6 @@
     display: none;
     color: white;
 }
-#tela-usuario header{
-    background-color: #ed3625;
-    width: 100%;
-    height: 60px;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    padding: 10px;
-}
 #tela-usuario .container{
     margin: 45px 14% 10px 14%;
     display: flex;

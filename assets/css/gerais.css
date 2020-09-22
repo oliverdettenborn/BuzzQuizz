@@ -1,4 +1,4 @@
-#tela-usuario, #tela-login{
+#tela-usuario, #tela-login, #tela-criacao{
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -7,4 +7,15 @@
     background-color: white;
     transition: display 300ms ease-in;
     font-family: 'Roboto', sans-serif;
+}
+header{
+    background-color: #ed3625;
+    color: white;
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px;
 }
