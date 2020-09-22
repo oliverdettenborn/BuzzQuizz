@@ -1,10 +1,6 @@
 #tela-usuario{
     display: none;
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
     color: white;
-
 }
 #tela-usuario header{
     background-color: #ed3625;
@@ -40,12 +36,11 @@
 }
 #tela-usuario #criar-quizz{
     background-color: #ed3625;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 900;
+    font-size: 22px;
 }
 #tela-usuario #criar-quizz ion-icon{
-    font-size: 25px;
+    font-size: 35px;
 }
 #tela-usuario .quizz{
     background-color: white;
