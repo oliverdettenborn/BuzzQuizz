@@ -39,17 +39,12 @@ function enviarUsuario(){
 
 function processarSucessoLogin(resposta){
     salvarToken(resposta.data.token);
-    trocarParaTelaUsuario();
+    trocarDeTela("#tela-login","#tela-usuario");
 }
 
 function processarErroLogin(){
     toggleAtivacaoBotao(botaoDesativado,"ativar");
     alert("Email ou senha incorretos! Digite novamente seu email ou senha");
-}
-
-function trocarParaTelaUsuario(){
-    var telaLogin = document.querySelector('#tela-login');
-    telaLogin.style.display = "none";
 }
 
 function toggleAtivacaoBotao(botao,comando){
