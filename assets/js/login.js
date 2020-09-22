@@ -1,24 +1,23 @@
 var usuario = {};
-var botaoEntrar;
+var botaoDesativado;
 
 function entrar(button){
-    botaoEntrar = button;
     var inputEmail = document.querySelector('#email');
     var email = inputEmail.value;
 
     var inputSenha = document.querySelector('#senha');
     var senha = inputSenha.value;
 
-    verificarDadosDigitados(email,senha);
+    verificarDadosDigitados(email,senha,button);
 }
 
-function verificarDadosDigitados(email,senha){
+function verificarDadosDigitados(email,senha,button){
     if(email.length !== 0 && senha.length !== 0){
         usuario = {
             "email": email,
             "password": senha
         }
-        botaoEntrar.setAttribute('disabled','');
+        toggleAtivacaoBotao(button,"desativar");
         enviarUsuario();
     }else{
         alert("Você precisa inserir um email ou senha válidos");
@@ -39,14 +38,24 @@ function enviarUsuario(){
 }
 
 function processarSucessoLogin(resposta){
-    botaoEntrar.removeAttribute('disabled','');
     salvarToken(resposta.data.token);
+    trocarParaTelaUsuario();
+}
 
+function processarErroLogin(){
+    toggleAtivacaoBotao(botaoDesativado,"ativar");
+    alert("Email ou senha incorretos! Digite novamente seu email ou senha");
+}
+
+function trocarParaTelaUsuario(){
     var telaLogin = document.querySelector('#tela-login');
     telaLogin.style.display = "none";
 }
 
-function processarErroLogin(){
-    botaoEntrar.removeAttribute('disabled','');
-    alert("Email ou senha incorretos! Digite novamente seu email ou senha");
+function toggleAtivacaoBotao(botao,comando){
+    if(comando === 'desativar'){
+        botao.setAttribute('disabled','');
+        botaoDesativado = botao;
+    } 
+    else if ('ativar') botaoDesativado.removeAttribute('disabled','');
 }
