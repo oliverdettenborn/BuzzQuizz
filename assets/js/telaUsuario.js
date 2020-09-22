@@ -1,6 +1,9 @@
 var tokenUsuario = null;
 var meusQuizz = [];
 
+
+// ----------------------------------------------------------------funções de comunicação server
+
 function salvarToken(token){
     tokenUsuario = {"User-Token": token};
 }
@@ -19,8 +22,15 @@ function processarErroQuizz(){
     window.location.reload();
 }
 
+// -----------------------------------------------------------------------------funções onclick
+function criarQuizz(){
+    trocarDeTela("#tela-usuario","#tela-criacao");
+}
 
-// ----------------------------------------------------------------------------funções de renderização
+function jogarQuizz(id){}
+
+
+// -----------------------------------------------------------------------funções de renderização
 function renderizarMeusQuizz(){
     for(var i = 0; i < meusQuizz.length; i++) renderizarQuizz(meusQuizz[i]);
 }
