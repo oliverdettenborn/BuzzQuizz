@@ -27,7 +27,6 @@ function verificarDadosDigitados(email,senha,button){
 
 function pressionarEnter(button){
     codekey = event.keyCode;
-    console.log("enter");
     if (codekey === 13){
         entrar(button);
     }
