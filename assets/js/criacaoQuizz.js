@@ -53,26 +53,27 @@ renderizarNiveis();
 // }
 function pegarPerguntas(){
     var numeroPergunta = 1;
-    var identificadorCaixa = '#perguntas .item-lista:nth-child('+numeroPergunta+')';
+    while(numeroPergunta <= qtdPerguntas){
+        var identificadorCaixa = '#perguntas .item-lista:nth-child('+numeroPergunta+')';
 
-    var pergunta = pegarValorInput(identificadorCaixa + ' .pergunta');
-    pergunta = removerEspaçosInicioFim(pergunta);
-    pergunta = primeiraLetraEmMaiusculo(pergunta);
-
-    var respostas = pegarRespostas(identificadorCaixa);
-
-    var verificacao = verificarPerguntas(pergunta);
-
-    if(verificacao === true){
-        var objetoPergunta = [{
-            "titulo": pergunta,
-            "repostas": respostas
-        }];
-        quizz.data.perguntas.push(objetoPergunta);
-        console.log(quizz);
-
-    }else alert('As perguntas devem ser simples, com somente um ponto de interrogação');
-
+        var pergunta = pegarValorInput(identificadorCaixa + ' .pergunta');
+        pergunta = removerEspaçosInicioFim(pergunta);
+        pergunta = primeiraLetraEmMaiusculo(pergunta);
+    
+        var respostas = pegarRespostas(identificadorCaixa);
+    
+        var verificacao = verificarPerguntas(pergunta);
+    
+        if(verificacao === true){
+            var objetoPergunta = [{
+                "titulo": pergunta,
+                "repostas": respostas
+            }];
+            quizz.data.perguntas.push(objetoPergunta);
+            console.log(quizz);
+    
+        }
+    }
 }
 function pegarRespostas(identificadorCaixa){
     var arrayrespostas = [];
