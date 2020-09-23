@@ -11,6 +11,99 @@ function adicionarNivel(){
     renderizarNiveis();
 }
 
+//------------------------------------------------------------ funções de verficação novo quizz
+function publicarNovoQuizz(){
+    var tituloQuizz = pegarValorInput('#titulo');
+    if(tituloQuizz !== 'vazio'){
+        tituloQuizz = removerEspaçosInicioFim(tituloQuizz);
+        tituloQuizz = primeiraLetraEmMaiusculo(tituloQuizz);
+        quizz.title = tituloQuizz;
+    }else return;
+
+    pegarPerguntas();
+
+    
+    // //pegar os dados do input dos niveis
+    // pegarNiveis();
+    //     removerEspaçosInicioFim();
+    //     primeiraLetraEmMaiusculo();
+    
+    // enviarQuizz();
+
+    //renderizar os quizz na tela do user
+    //voltar a tela do user
+}
+
+//-------------------------------------------------------------------- funções de pagar dados digitados
+var quizz = {
+	"title": null,
+	"data": {
+        "perguntas": [],
+        "niveis": []
+    }
+}
+
+renderizarPerguntas();
+renderizarNiveis();
+// {
+//     "perguntas": [{
+//         "titulo": "Pergunta 1?",
+//         "respostas": ["1", "2", "3", "4"]
+//     }]
+// }
+function pegarPerguntas(){
+    var numeroPergunta = 1;
+    var identificadorCaixa = '#perguntas .item-lista:nth-child('+numeroPergunta+')';
+
+    var pergunta = pegarValorInput(identificadorCaixa + ' .pergunta');
+    pergunta = removerEspaçosInicioFim(pergunta);
+    pergunta = primeiraLetraEmMaiusculo(pergunta);
+
+    var respostas = pegarRespostas(identificadorCaixa);
+
+    var verificacao = verificarPerguntas(pergunta);
+
+    if(verificacao === true){
+        var objetoPergunta = [{
+            "titulo": pergunta,
+            "repostas": respostas
+        }];
+        quizz.data.perguntas.push(objetoPergunta);
+        console.log(quizz);
+
+    }else alert('As perguntas devem ser simples, com somente um ponto de interrogação');
+
+}
+function pegarRespostas(identificadorCaixa){
+    var arrayrespostas = [];
+
+    var respostaCorreta = pegarValorInput(identificadorCaixa + ' .correta .resposta');
+    respostaCorreta = removerEspaçosInicioFim(respostaCorreta);
+    respostaCorreta = primeiraLetraEmMaiusculo(respostaCorreta);
+
+    var linkCorreta = pegarValorInput(identificadorCaixa + ' .correta .link');
+    linkCorreta = removerEspaçosInicioFim(linkCorreta);
+
+    arrayrespostas.push({"respota": respostaCorreta,"link": linkCorreta});
+
+    for(var i = 1; i <= 3; i++){
+        var posicao = transformarParaClasse(i);
+
+        var respostaErrada = pegarValorInput(identificadorCaixa + ' .errada'+ posicao +' .resposta');
+        respostaErrada = removerEspaçosInicioFim(respostaErrada);
+        respostaErrada = primeiraLetraEmMaiusculo(respostaErrada);
+
+        var linkErrada = pegarValorInput(identificadorCaixa + ' .errada'+ posicao +' .link');
+        linkErrada = removerEspaçosInicioFim(linkErrada);
+
+        arrayrespostas.push({"respota": respostaErrada,"link": linkErrada});
+    }
+    return arrayrespostas;
+}
+
+function pegarNiveis(){
+
+}
 
 //------------------------------------------------------------------------- funções de renderizar
 function renderizarPerguntas(){
