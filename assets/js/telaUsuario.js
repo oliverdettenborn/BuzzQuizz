@@ -24,6 +24,8 @@ function processarErroQuizz(){
 
 // -----------------------------------------------------------------------------funções onclick
 function criarQuizz(){
+    renderizarPerguntas();
+    renderizarNiveis();
     trocarDeTela("#tela-usuario","#tela-criacao");
 }
 
