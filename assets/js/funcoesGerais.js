@@ -19,7 +19,21 @@ function pegarValorInput(identificador){
 }
 
 function verificarPerguntas(pergunta){
+    //verificação se possui apenas 1 interrogação:
+    var count = 0;
+    var posicaoInterrogacao = pergunta.indexOf("?");
 
+    while (posicaoInterrogacao !== -1){
+        count++;
+        posicaoInterrogacao = pergunta.indexOf( "?",posicaoInterrogacao + 1);
+    };
+
+    //verificação se interrogação está no fim e tem apenas 1:
+    var estaNoFinal = pergunta.lastIndexOf("?") === (pergunta.length - 1);
+    var temSoUm = count === 1;
+    
+    if(temSoUm && estaNoFinal) return true;
+    else return false;
 }
 
 function removerEspaçosInicioFim(string){
