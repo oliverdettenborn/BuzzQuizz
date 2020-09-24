@@ -15,7 +15,7 @@ function resetarVariaveis(){
             "perguntas": [],
             "niveis": []
         }
-    }
+}
     perguntaInvalida = null;
 }
 
@@ -50,8 +50,6 @@ function publicarNovoQuizz(){
 }
 
 //-------------------------------------------------------------------- funções de pagar dados digitados
-renderizarPerguntas();
-renderizarNiveis();
 
 function pegarPerguntas(){
     var numeroPergunta = 1;

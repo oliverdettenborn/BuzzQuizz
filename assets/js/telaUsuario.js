@@ -1,5 +1,5 @@
 var tokenUsuario = null;
-var contentType = {"Content-Type": "application/json"}
+// var contentType = {"Content-Type": "application/json"}
 var meusQuizz = [];
 
 
@@ -10,7 +10,7 @@ function salvarToken(token){
 }
 
 function pegarMeusQuizz(){
-    var requisicao = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v1/buzzquizz/quizzes',{ headers: tokenUsuario})
+    var requisicao = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v1/buzzquizz/quizzes',{ headers: tokenUsuario});
     requisicao.then(processarSucessoQuizz).catch(processarErroQuizz);
 }
 
@@ -24,18 +24,17 @@ function processarErroQuizz(){
 }
 
 function enviarQuizz(quizz){
-    var requisicao = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v1/buzzquizz/quizzes',{ headers: {tokenUsuario, contentType}},quizz);
+    var requisicao = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v1/buzzquizz/quizzes',quizz,{ headers: tokenUsuario});
     requisicao.then(processarSucessoEnvioQuizz).catch(processarErroEnvioQuizz);
 }
 
 function processarSucessoEnvioQuizz(){
-    console.log('sucesso!');
     pegarMeusQuizz();
     trocarDeTela("#tela-criacao","#tela-usuario");
 }
 
 function processarErroEnvioQuizz(erro){
-    console.log("deu ruim!",erro);
+    alert('Tivemos um problema em enviar seu Quizz, por favor refaça o quizz');
 }
 
 // -----------------------------------------------------------------------------funções onclick
