@@ -65,10 +65,10 @@ function pegarPerguntas(){
         var verificacao = verificarPerguntas(pergunta);
     
         if(verificacao === true){
-            var objetoPergunta = [{
+            var objetoPergunta = {
                 "titulo": pergunta,
-                "repostas": respostas
-            }];
+                "respostas": respostas
+            };
             quizz.data.perguntas.push(objetoPergunta);
         }else{
             perguntaInvalida = 'Você digitou perguntas em um formato inválido, por favor refaça o formulário com perguntas com apenas uma interrogação, posicionada ao final da sua pergunta, ex.: "Que dia é hoje?"';
@@ -100,7 +100,8 @@ function pegarRespostas(identificadorCaixa){
 
         arrayrespostas.push({"resposta": respostaErrada,"link": linkErrada});
     }
-    return arrayrespostas;
+    if(arrayrespostas.length > 0) return arrayrespostas;
+    else alert('Você precisa preencher todas as respostas');
 }
 
 function pegarNiveis(){
@@ -128,13 +129,13 @@ function pegarNiveis(){
         descricaoNivel = removerEspaçosInicioFim(descricaoNivel);
         descricaoNivel = primeiraLetraEmMaiusculo(descricaoNivel);
 
-        var objetoNivel = [{
+        var objetoNivel = {
             "acerto-minimo": acertoMinimo,
             "acerto-maximo": acertoMaximo,
             "titulo": tituloNivel,
             "link": linkNivel,
             "descricao": descricaoNivel
-        }];
+        };
         quizz.data.niveis.push(objetoNivel);
 
         numeroNivel++;

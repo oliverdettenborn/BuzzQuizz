@@ -1,5 +1,5 @@
 #tela-jogar{
-    display: block;
+    display: none;
 }
 #tela-jogar > div{
     width: 70%;
@@ -73,10 +73,4 @@
     padding-left: 10px;
     display: flex;
     align-items: center;
-}
-.correta .texto-resposta{
-    background-color: #c0eebe;
-}
-.errada .texto-resposta{
-    background-color: #ebaaac;
 }
