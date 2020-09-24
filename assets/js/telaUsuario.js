@@ -44,18 +44,20 @@ function criarQuizz(){
     trocarDeTela("#tela-usuario","#tela-criacao");
 }
 
-function jogarQuizz(id){}
+function jogarQuizz(indice){
+    console.log(meusQuizz[indice]);
+}
 
 
 // -----------------------------------------------------------------------funções de renderização
 function renderizarMeusQuizz(){
-    for(var i = 0; i < meusQuizz.length; i++) renderizarQuizz(meusQuizz[i]);
+    for(var i = 0; i < meusQuizz.length; i++) renderizarQuizz(meusQuizz[i],i);
 }
 
-function renderizarQuizz(quizz){
+function renderizarQuizz(quizz,posicao){
     var div = document.createElement('div');
     div.classList.add('quizz');
-    div.setAttribute('onclick','jogarQuizz(' + quizz.id +')');
+    div.setAttribute('onclick','jogarQuizz(' + posicao +')');
     div.innerText = quizz.title;
 
     var containerQuizzes = document.querySelector('#tela-usuario div.container');
