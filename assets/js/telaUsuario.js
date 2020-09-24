@@ -45,7 +45,8 @@ function criarQuizz(){
 }
 
 function jogarQuizz(indice){
-    console.log(meusQuizz[indice]);
+    salvarQuizzQueSeraJogado(meusQuizz[indice]);
+    trocarDeTela("#tela-usuario",'#tela-jogar');
 }
 
 
