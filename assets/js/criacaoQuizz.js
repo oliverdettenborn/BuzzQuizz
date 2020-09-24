@@ -8,6 +8,17 @@ var quizz = {
         "niveis": []
     }
 }
+function resetarVariaveis(){
+    quizz = {
+        "title": null,
+        "data": {
+            "perguntas": [],
+            "niveis": []
+        }
+    }
+    perguntaInvalida = null;
+}
+
 
 //--------------------------------------------------------------- funções adição pergunta e nivel
 function adicionarPergunta(){
@@ -21,6 +32,8 @@ function adicionarNivel(){
 
 //------------------------------------------------------------ funções de verficação novo quizz
 function publicarNovoQuizz(){
+    resetarVariaveis();
+
     var tituloQuizz = pegarValorInput('#titulo');
     if(tituloQuizz !== 'vazio'){
         tituloQuizz = removerEspaçosInicioFim(tituloQuizz);
@@ -33,13 +46,7 @@ function publicarNovoQuizz(){
 
     //se alguma pergunta foi digitada em formato invalido:
     if(perguntaInvalida !== null) alert(perguntaInvalida);
-
-
-    console.log(quizz);
-    enviarQuizz();
-
-    //renderizar os quizz na tela do user
-    //voltar a tela do user
+    else enviarQuizz(quizz);
 }
 
 //-------------------------------------------------------------------- funções de pagar dados digitados
