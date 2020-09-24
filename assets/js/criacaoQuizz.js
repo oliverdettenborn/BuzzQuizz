@@ -1,5 +1,6 @@
 var qtdPerguntas = 1;
 var qtdNiveis = 1;
+var perguntaInvalida = null;
 var quizz = {
 	"title": null,
 	"data": {
@@ -31,9 +32,11 @@ function publicarNovoQuizz(){
     pegarNiveis();
 
     //se alguma pergunta foi digitada em formato invalido:
+    if(perguntaInvalida !== null) alert(perguntaInvalida);
+
 
     console.log(quizz);
-    //enviarQuizz();
+    enviarQuizz();
 
     //renderizar os quizz na tela do user
     //voltar a tela do user
@@ -62,6 +65,8 @@ function pegarPerguntas(){
                 "repostas": respostas
             }];
             quizz.data.perguntas.push(objetoPergunta);
+        }else{
+            perguntaInvalida = 'Você digitou perguntas em um formato inválido, por favor refaça o formulário com perguntas com apenas uma interrogação, posicionada ao final da sua pergunta, ex.: "Que dia é hoje?"';
         }
         numeroPergunta++;
     }
