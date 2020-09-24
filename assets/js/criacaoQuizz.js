@@ -1,5 +1,12 @@
 var qtdPerguntas = 1;
 var qtdNiveis = 1;
+var quizz = {
+	"title": null,
+	"data": {
+        "perguntas": [],
+        "niveis": []
+    }
+}
 
 //--------------------------------------------------------------- funções adição pergunta e nivel
 function adicionarPergunta(){
@@ -21,36 +28,21 @@ function publicarNovoQuizz(){
     }else return;
 
     pegarPerguntas();
+    pegarNiveis();
 
-    
-    // //pegar os dados do input dos niveis
-    // pegarNiveis();
-    //     removerEspaçosInicioFim();
-    //     primeiraLetraEmMaiusculo();
-    
-    // enviarQuizz();
+    //se alguma pergunta foi digitada em formato invalido:
+
+    console.log(quizz);
+    //enviarQuizz();
 
     //renderizar os quizz na tela do user
     //voltar a tela do user
 }
 
 //-------------------------------------------------------------------- funções de pagar dados digitados
-var quizz = {
-	"title": null,
-	"data": {
-        "perguntas": [],
-        "niveis": []
-    }
-}
-
 renderizarPerguntas();
 renderizarNiveis();
-// {
-//     "perguntas": [{
-//         "titulo": "Pergunta 1?",
-//         "respostas": ["1", "2", "3", "4"]
-//     }]
-// }
+
 function pegarPerguntas(){
     var numeroPergunta = 1;
     while(numeroPergunta <= qtdPerguntas){
@@ -70,9 +62,8 @@ function pegarPerguntas(){
                 "repostas": respostas
             }];
             quizz.data.perguntas.push(objetoPergunta);
-            console.log(quizz);
-    
         }
+        numeroPergunta++;
     }
 }
 function pegarRespostas(identificadorCaixa){
@@ -103,7 +94,41 @@ function pegarRespostas(identificadorCaixa){
 }
 
 function pegarNiveis(){
+    var numeroNivel = 1;
+    while(numeroNivel <= qtdNiveis){
+        var identificadorCaixa = '#niveis .item-lista:nth-child('+numeroNivel+')';
 
+        var acertoMinimo = pegarValorInput(identificadorCaixa + ' .acerto-min');
+        acertoMinimo = removerEspaçosInicioFim(acertoMinimo);
+        acertoMinimo = primeiraLetraEmMaiusculo(acertoMinimo);
+
+        var acertoMaximo = pegarValorInput(identificadorCaixa + ' .acerto-max');
+        acertoMaximo = removerEspaçosInicioFim(acertoMaximo);
+        acertoMaximo = primeiraLetraEmMaiusculo(acertoMaximo);
+
+        var tituloNivel = pegarValorInput(identificadorCaixa + ' .titulo');
+        tituloNivel = removerEspaçosInicioFim(tituloNivel);
+        tituloNivel = primeiraLetraEmMaiusculo(tituloNivel);
+
+        var linkNivel = pegarValorInput(identificadorCaixa + ' .link');
+        linkNivel = removerEspaçosInicioFim(linkNivel);
+        linkNivel = primeiraLetraEmMaiusculo(linkNivel);
+
+        var descricaoNivel = pegarValorInput(identificadorCaixa + ' .descricao');
+        descricaoNivel = removerEspaçosInicioFim(descricaoNivel);
+        descricaoNivel = primeiraLetraEmMaiusculo(descricaoNivel);
+
+        var objetoNivel = [{
+            "acerto-minimo": acertoMinimo,
+            "acerto-maximo": acertoMaximo,
+            "titulo": tituloNivel,
+            "link": linkNivel,
+            "descricao": descricaoNivel
+        }];
+        quizz.data.niveis.push(objetoNivel);
+
+        numeroNivel++;
+    }
 }
 
 //------------------------------------------------------------------------- funções de renderizar
