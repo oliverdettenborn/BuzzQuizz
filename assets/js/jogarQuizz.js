@@ -3,6 +3,8 @@ var acertos = 0;
 var numeroPeguntaAtual = 0;
 var perguntasQuizz = [];
 var niveisQuizz = [];
+var respostaCerta = null;
+var acertos = 0;
 
 function jogarEsseQuizz(quizzSelecionado){
     quizzJogando = quizzSelecionado;
@@ -11,9 +13,48 @@ function jogarEsseQuizz(quizzSelecionado){
 
     renderizarJogo();
 }
+//---------------------------------------------------------------------------------- função de clique na opção
+function verficarRespostaCorreta(elementoClicado){
+    var textoClicado = elementoClicado.querySelector('.texto-resposta');
+    var respostaEscolhida = textoClicado.getAttribute('data-name');
 
+    if(respostaEscolhida === respostaCerta) acertos++;
+
+    mudarCorCaixaOpcao();
+    verificarFinalDoJogo();
+}
+
+function mudarCorCaixaOpcao(){
+    var opcoes = document.querySelectorAll('#tela-jogar .opcao .texto-resposta');
+
+    for(var i = 0; i < opcoes.length; i++){
+        var dataName = opcoes[i].getAttribute('data-name');
+
+        if(dataName === respostaCerta) opcoes[i].style.background = '#c0eebe';
+        else opcoes[i].style.background = '#ebaaac';
+    }
+}
+
+function verificarFinalDoJogo(){
+    var terminouAsPerguntas = (numeroPeguntaAtual + 1) === perguntasQuizz.length;
+
+    if(terminouAsPerguntas){
+        finalJogo();
+    }else{
+        numeroPeguntaAtual++;
+        setTimeout(renderizarJogo,2000);
+    }
+}
+
+function finalJogo(){
+    console.log("chegou ao final do jogo",acertos);
+}
+
+
+//------------------------------------------------------------------------------------ renderização das perguntas
 function renderizarJogo(){
     var divPai = document.querySelector('#tela-jogar #divPai');
+    divPai.innerHTML = "";
     
     var titulo = renderizarTitulo();
     divPai.appendChild(titulo);
@@ -32,6 +73,8 @@ function renderizarJogo(){
         var opcaoDeResposta = renderizarRespostas(arrayRespostas[i]);
         arrayElementoHTML.push(opcaoDeResposta);
     }
+
+    respostaCerta = arrayRespostas[0].resposta;
 
     //embaralhar a array de elementos HTML
     var arrayEmbaralhada = arrayElementoHTML.sort(comparador);
@@ -63,6 +106,7 @@ function renderizarPergunta(){
 function renderizarRespostas(elemento){
     var caixaOpcao = document.createElement('div');
     caixaOpcao.setAttribute('class','opcao');
+    caixaOpcao.setAttribute('onclick','verficarRespostaCorreta(this)');
 
     var imagem = document.createElement('img');
     imagem.setAttribute('src',elemento.link);
@@ -75,10 +119,3 @@ function renderizarRespostas(elemento){
     caixaOpcao.appendChild(textoResposta);
     return caixaOpcao;
 }
-
-/* .correta .texto-resposta{
-    background-color: #c0eebe;
-}
-.errada .texto-resposta{
-    background-color: #ebaaac;
-} */
