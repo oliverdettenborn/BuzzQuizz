@@ -1,5 +1,4 @@
 var tokenUsuario = null;
-// var contentType = {"Content-Type": "application/json"}
 var meusQuizz = [];
 
 
@@ -45,7 +44,7 @@ function criarQuizz(){
 }
 
 function jogarQuizz(indice){
-    salvarQuizzQueSeraJogado(meusQuizz[indice]);
+    jogarEsseQuizz(meusQuizz[indice]);
     trocarDeTela("#tela-usuario",'#tela-jogar');
 }
 
