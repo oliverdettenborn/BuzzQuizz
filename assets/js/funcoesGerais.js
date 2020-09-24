@@ -51,3 +51,7 @@ function transformarParaClasse(i){
     else if(i === 2) return '.dois';
     else if(i === 3) return '.tres';
 }
+
+function comparador() { 
+	return Math.random() - 0.5; 
+}
