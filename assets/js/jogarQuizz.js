@@ -5,6 +5,7 @@ var perguntasQuizz = [];
 var niveisQuizz = [];
 var respostaCerta = null;
 var acertos = 0;
+var quantPerguntas = perguntasQuizz.length;
 
 function jogarEsseQuizz(quizzSelecionado){
     quizzJogando = quizzSelecionado;
@@ -36,7 +37,7 @@ function mudarCorCaixaOpcao(){
 }
 
 function verificarFinalDoJogo(){
-    var terminouAsPerguntas = (numeroPeguntaAtual + 1) === perguntasQuizz.length;
+    var terminouAsPerguntas = (numeroPeguntaAtual + 1) === quantPerguntas;
 
     if(terminouAsPerguntas){
         finalJogo();
@@ -48,8 +49,29 @@ function verificarFinalDoJogo(){
 
 function finalJogo(){
     console.log("chegou ao final do jogo",acertos);
+
+    var score = calcularScore();
+    renderizarPontuacao(score);
+
+    var nivelAtingido = verificarNivel(score);
+
 }
 
+function calcularScore(){
+    var pontuação = Math.floor(acertos / quantPerguntas);
+    return pontuação;
+}
+
+function verificarNivel(score){
+    
+}
+
+//----------------------------------------------------------------------------------- renderização tela final
+function renderizarPontuacao(score){
+    var caixaHeader = document.querySelector('#pergunta-atual');
+    caixaHeader.innerHTML = "Você acertou " + acertos + ' de ' + quantPerguntas + ' perguntas! <br>';
+    caixaHeader.innerHTML += 'Score: ' + score + '%';
+}
 
 //------------------------------------------------------------------------------------ renderização das perguntas
 function renderizarJogo(){
@@ -66,7 +88,6 @@ function renderizarJogo(){
     container.appendChild(pergunta);
 
     var arrayRespostas = perguntasQuizz[numeroPeguntaAtual].respostas;
-    console.log(arrayRespostas,perguntasQuizz[numeroPeguntaAtual]);
     var arrayElementoHTML= [];
 
     for(var i = 0; i < arrayRespostas.length; i++){
