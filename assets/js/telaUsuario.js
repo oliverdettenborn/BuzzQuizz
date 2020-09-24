@@ -1,4 +1,5 @@
 var tokenUsuario = null;
+var contentType = {"Content-Type": "application/json"}
 var meusQuizz = [];
 
 
@@ -20,6 +21,21 @@ function processarSucessoQuizz(resposta){
 
 function processarErroQuizz(){
     window.location.reload();
+}
+
+function enviarQuizz(quizz){
+    var requisicao = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v1/buzzquizz/quizzes',{ headers: {tokenUsuario, contentType}},quizz);
+    requisicao.then(processarSucessoEnvioQuizz).catch(processarErroEnvioQuizz);
+}
+
+function processarSucessoEnvioQuizz(){
+    console.log('sucesso!');
+    pegarMeusQuizz();
+    trocarDeTela("#tela-criacao","#tela-usuario");
+}
+
+function processarErroEnvioQuizz(erro){
+    console.log("deu ruim!",erro);
 }
 
 // -----------------------------------------------------------------------------funções onclick
