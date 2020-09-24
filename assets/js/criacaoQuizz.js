@@ -86,7 +86,7 @@ function pegarRespostas(identificadorCaixa){
     var linkCorreta = pegarValorInput(identificadorCaixa + ' .correta .link');
     linkCorreta = removerEspaçosInicioFim(linkCorreta);
 
-    arrayrespostas.push({"respota": respostaCorreta,"link": linkCorreta});
+    arrayrespostas.push({"resposta": respostaCorreta,"link": linkCorreta});
 
     for(var i = 1; i <= 3; i++){
         var posicao = transformarParaClasse(i);
@@ -98,7 +98,7 @@ function pegarRespostas(identificadorCaixa){
         var linkErrada = pegarValorInput(identificadorCaixa + ' .errada'+ posicao +' .link');
         linkErrada = removerEspaçosInicioFim(linkErrada);
 
-        arrayrespostas.push({"respota": respostaErrada,"link": linkErrada});
+        arrayrespostas.push({"resposta": respostaErrada,"link": linkErrada});
     }
     return arrayrespostas;
 }
