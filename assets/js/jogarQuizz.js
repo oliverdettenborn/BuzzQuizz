@@ -1,3 +1,5 @@
+// ------------------------------------------------------------------- variaveis globais
+var iconeHome = document.querySelector('#tela-jogar header ion-icon');
 var quizzJogando = [];
 var acertos = 0;
 var numeroPeguntaAtual = 0;
@@ -6,6 +8,10 @@ var niveisQuizz = [];
 var respostaCerta = null;
 var acertos = 0;
 
+
+
+//-------------------------------------- funções do jogo ---------------------------------
+
 function jogarEsseQuizz(quizzSelecionado){
     quizzJogando = quizzSelecionado;
     perguntasQuizz = quizzJogando.data.perguntas;
@@ -13,7 +19,11 @@ function jogarEsseQuizz(quizzSelecionado){
 
     renderizarJogo();
 }
-//---------------------------------------------------------------------------------- função de clique na opção
+
+
+
+
+//------------------------------------------------------------------ função de clique na opção
 function verficarRespostaCorreta(elementoClicado){
     var textoClicado = elementoClicado.querySelector('.texto-resposta');
     var respostaEscolhida = textoClicado.getAttribute('data-name');
@@ -47,6 +57,8 @@ function verificarFinalDoJogo(){
 }
 
 
+
+
 //--------------------------------------------------------------------- fim do quizz
 function finalJogo(){
     var score = calcularScore();
@@ -75,6 +87,9 @@ function verificarNivel(score){
     }
 }
 
+
+
+// ------------------------------------------------ funções de resetar o jogo e o botao home
 function resertarJogo(){
     quizzJogando = [];
     acertos = 0;
@@ -84,7 +99,10 @@ function resertarJogo(){
     respostaCerta = null;
     acertos = 0;
 }
-
+function resetarBotaoHome(){
+    iconeHome.style.color = '#ed3625';
+    iconeHome.removeAttribute('onclick');
+}
 
 
 //---------------------------------------------------------------------- renderização tela final
@@ -96,7 +114,6 @@ function renderizarPontuacao(score){
 }
 
 function renderizarBotaoHome(){
-    var iconeHome = document.querySelector('#tela-jogar header ion-icon');
     iconeHome.setAttribute('onclick','trocarDeTela("#tela-jogar","#tela-usuario")');
     iconeHome.style.color = '#fff';
 

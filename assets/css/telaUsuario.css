@@ -1,10 +1,10 @@
 #tela-usuario{
     display: none;
+    opacity: 0;
     width: 100vw;
     height: 100vh;
     color: white;
     background-color: white;
-    transition: display 300ms ease-in;
     font-family: 'Roboto', sans-serif;
     position: absolute;
     top: 0;

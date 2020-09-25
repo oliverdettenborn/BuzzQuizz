@@ -1,5 +1,6 @@
 #tela-jogar{
     display: none;
+    opacity: 0;
 }
 #tela-jogar > div{
     width: 70%;

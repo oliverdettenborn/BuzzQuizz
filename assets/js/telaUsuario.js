@@ -46,12 +46,14 @@ function processarSucessoExclusão(){
 
 // -----------------------------------------------------------------------------funções onclick
 function criarQuizz(){
+    limparTelaCriacao();
     renderizarPerguntas();
     renderizarNiveis();
     trocarDeTela("#tela-usuario","#tela-criacao");
 }
 
 function jogarQuizz(indice){
+    resetarBotaoHome();
     jogarEsseQuizz(meusQuizz[indice]);
     trocarDeTela("#tela-usuario",'#tela-jogar');
 }

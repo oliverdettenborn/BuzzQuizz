@@ -5,7 +5,6 @@
     top: 0;
     left: 0;
     background-color: white;
-    transition: display 300ms ease-in;
     font-family: 'Roboto', sans-serif;
 }
 header{
@@ -18,4 +17,8 @@ header{
     align-items: center;
     font-weight: bold;
     padding: 10px;
+}
+/* transições animadas */
+#tela-login, #tela-usuario, #tela-criacao, #tela-jogar{
+    transition: opacity 700s ease-in-out;
 }

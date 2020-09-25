@@ -8,16 +8,6 @@ var quizz = {
         "niveis": []
     }
 }
-function resetarVariaveis(){
-    quizz = {
-        "title": null,
-        "data": {
-            "perguntas": [],
-            "niveis": []
-        }
-}
-    perguntaInvalida = null;
-}
 
 
 //--------------------------------------------------------------- funções adição pergunta e nivel
@@ -224,4 +214,23 @@ function criarCaixaPorcentagem(){
     caixaPorcentagem.appendChild(maximo);
 
     return caixaPorcentagem;
+}
+
+// ----------------------------------------------------------------- funções de reset
+function resetarVariaveis(){
+    quizz = {
+        "title": null,
+        "data": {
+            "perguntas": [],
+            "niveis": []
+        }
+}
+    perguntaInvalida = null;
+}
+function limparTelaCriacao(){
+    qtdPerguntas = 1;
+    var caixaPerguntas = document.querySelector('#perguntas');
+    caixaPerguntas.innerHTML= '';
+    var caixaNiveis = document.querySelector('#niveis');
+    caixaNiveis.innerHTML = '';
 }
