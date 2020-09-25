@@ -36,6 +36,14 @@ function processarErroEnvioQuizz(erro){
     alert('Tivemos um problema em enviar seu Quizz, por favor refaça o quizz');
 }
 
+function deletarQuizz(id){
+    axios.delete('https://mock-api.bootcamp.respondeai.com.br/api/v1/buzzquizz/quizzes/'+ id,{ headers: tokenUsuario}).then(processarSucessoExclusão);
+}
+
+function processarSucessoExclusão(){
+    pegarMeusQuizz();
+}
+
 // -----------------------------------------------------------------------------funções onclick
 function criarQuizz(){
     renderizarPerguntas();
@@ -60,8 +68,21 @@ function renderizarMeusQuizz(){
 function renderizarQuizz(quizz,posicao,containerQuizzes){
     var div = document.createElement('div');
     div.classList.add('quizz');
-    div.setAttribute('onclick','jogarQuizz(' + posicao +')');
-    div.innerText = quizz.title;
+    var tituloQuizz = document.createElement('span');
+    tituloQuizz.setAttribute('onclick','jogarQuizz(' + posicao +')');
+    tituloQuizz.innerText = quizz.title;
+    tituloQuizz.style.cursor = 'pointer';
+    div.appendChild(tituloQuizz);
+
+    var iconeDeletar = criarIconeDeletar(quizz.id);
+    div.appendChild(iconeDeletar);
 
     containerQuizzes.appendChild(div);
+}
+
+function criarIconeDeletar(id){
+    var iconeDeletar = document.createElement('ion-icon');
+    iconeDeletar.setAttribute('name','trash-outline');
+    iconeDeletar.setAttribute('onclick','deletarQuizz('+ id +')');
+    return iconeDeletar;
 }

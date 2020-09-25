@@ -45,4 +45,21 @@
     background-color: white;
     color: #2c2b2b;
     font-weight: 300;
+    position: relative;
+    overflow: hidden;
+}
+#tela-usuario .quizz ion-icon{
+    color: #fff;
+    background-color: #ed3625;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0px 5px 0px 0px;
+    cursor: pointer;
+    padding: 5px;
+}
+#tela-usuario .quizz:hover ion-icon{
+    right: 0;
 }
