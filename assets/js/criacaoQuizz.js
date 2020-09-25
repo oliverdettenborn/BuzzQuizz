@@ -49,7 +49,7 @@ function publicarNovoQuizz(){
     else enviarQuizz(quizz);
 }
 
-//-------------------------------------------------------------------- funções de pagar dados digitados
+//-------------------------------------------------------------- funções de pagar dados digitados
 
 function pegarPerguntas(){
     var numeroPergunta = 1;

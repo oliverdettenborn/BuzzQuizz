@@ -46,6 +46,10 @@ function primeiraLetraEmMaiusculo(string){
     return texto;
 }
 
+function sairTelaCriacao(){
+    trocarDeTela('#tela-criacao','#tela-usuario');
+}
+
 function transformarParaClasse(i){
     if(i === 1) return ".um";
     else if(i === 2) return '.dois';

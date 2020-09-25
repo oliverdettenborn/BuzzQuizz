@@ -20,10 +20,19 @@
     margin-bottom: 5px;
     padding-left: 3px;
 }
-#tela-criacao ion-icon{
+#tela-criacao article ion-icon{
     color: #ed3625;
     font-size: 40px;
     margin-bottom: 40px;
+    cursor: pointer;
+}
+#tela-criacao header ion-icon{
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
 }
 #tela-criacao button{
     height: 40px;
