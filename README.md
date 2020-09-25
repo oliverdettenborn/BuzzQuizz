@@ -25,21 +25,22 @@
 
 ### Features
 <section id="features">
-- [x] Layout Desktop e Mobile
-- [x] Tela de Login
-- [x] Tela do usuário
-- [x] Tela para criação de um quizz
-- [x] Número de perguntas por quizz ilimitada
-- [x] Número de nível ilimitado, todos com espeço para um título, descrição e uma imagem
-- [x] Quatro opções de resposta com imagem para cada pergunta
-- [x] Tela para o usuário jogar seus quizzes criados
-- [x] Possibilidade de exclusão de um quizz
-- [x] Botões de navegação entre as telas
-- [x] Transições entre as tela são animadas
-- [ ] Possibilidade de alteração de um quizz
-- [ ] Exportação do quizz para outras plataformas
+- [x] Layout Desktop e Mobile<br>
+- [x] Tela de Login<br>
+- [x] Tela do usuário<br>
+- [x] Tela para criação de um quizz<br>
+- [x] Número de perguntas por quizz ilimitada<br>
+- [x] Número de nível ilimitado, todos com espeço para um título, descrição e uma imagem<br>
+- [x] Quatro opções de resposta com imagem para cada pergunta<br>
+- [x] Tela para o usuário jogar seus quizzes criados<br>
+- [x] Possibilidade de exclusão de um quizz<br>
+- [x] Botões de navegação entre as telas<br>
+- [x] Transições entre as tela são animadas<br>
+- [ ] Possibilidade de alteração de um quizz<br>
+- [ ] Exportação do quizz para outras plataformas<br>
 </section>
 
+### Deploy
 <section id="link">
     Link para o site: https://thaliadettenborn.github.io/BuzzQuizz/
 </section>
@@ -47,15 +48,15 @@
 ### 🛠 Tecnologias
 <section id="tecnologias">
 As seguintes linguagens foram usadas na construção do projeto:
-- [HTML5]
-- [CSS3]
-- [Javascript]
+- [HTML5]<br>
+- [CSS3]<br>
+- [Javascript]<br>
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Axios](https://github.com/axios/axios)
-- [IonIcon](https://ionicons.com/)
-- [Spinkit](https://tobiasahlin.com/spinkit/)
+- [Axios](https://github.com/axios/axios)<br>
+- [IonIcon](https://ionicons.com/)<br>
+- [Spinkit](https://tobiasahlin.com/spinkit/)<br>
 </section>
 
 ### Contribuições
@@ -73,8 +74,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <img style="border-radius: 50%;" src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/>
 <br>
 <sub><b>Thalia Roberta</b></sub>
-</a>
-Feito por Thalia Roberta Dettenborn 👋🏽 Entre em contato!
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/thaliarobertad/) 
+</a><br>
+Feito por Thalia Roberta Dettenborn 👋🏽 Entre em contato!<br>
+[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/thaliarobertad/)<br>
 [![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:thalia.born@gmail.com)
 </section>
