@@ -2,12 +2,12 @@ function trocarDeTela(telaAtual,proximaTela){
     var desabilitarTela = document.querySelector(telaAtual);
     desabilitarTela.style.opacity = '0';
     var habilitarTela = document.querySelector(proximaTela);
-    habilitarTela.style.display = "block";
     habilitarTela.style.opacity = '1';
 
-    setTimeout(function (){
-        desabilitarTela.style.display = "none";
-    },1000);
+    setTimeout(function(){
+        habilitarTela.style.display = "block";
+        desabilitarTela.style.display = "none"; 
+    }, 1000);
 }
 
 function pegarValorInput(identificador){

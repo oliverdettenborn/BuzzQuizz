@@ -18,7 +18,15 @@ header{
     font-weight: bold;
     padding: 10px;
 }
+
+
 /* transições animadas */
 #tela-login, #tela-usuario, #tela-criacao, #tela-jogar{
-    transition: opacity 700s ease-in-out;
+    transition: opacity 1s ease-in;
+}
+#tela-login{
+    opacity: 1;
+}
+#tela-usuario, #tela-criacao, #tela-jogar{
+    opacity: 0;
 }
