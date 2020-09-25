@@ -68,7 +68,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Autor
 ---
-<img style="border-radius: 50px;" src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/>
+
+<img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;" style="border-radius: 50%;"/>
 <br>
 Feito por Thalia Roberta Dettenborn 👋🏽 Entre em contato!<br><br>
 <a href="https://www.linkedin.com/in/thaliarobertad/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> 
