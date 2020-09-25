@@ -51,7 +51,6 @@
     margin-bottom: 10px;
     border-radius: 20px;
     border: 1px solid rgb(177, 174, 174);
-    /* box-shadow: 1px 1px 3px 1px rgb(177, 174, 174); */
     position: relative;
 }
 #tela-jogar #opcoes-resposta .opcao img{

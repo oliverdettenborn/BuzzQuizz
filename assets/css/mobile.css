@@ -1,0 +1,30 @@
+@media (max-width: 500px){
+    #tela-usuario div.container{
+        width: 200px;
+        margin: 45px auto 10px auto;
+    }
+    #tela-criacao article{
+        width: 90vw;
+    }
+    #tela-jogar{
+        position: absolute;
+    }
+    #tela-jogar #opcoes-resposta{
+        flex-direction: column;
+    }
+    #tela-jogar #opcoes-resposta .opcao{
+        width: 100%;
+    }
+    #tela-jogar > div {
+        width: 90vw;
+        
+    }
+    #tela-jogar .nivel-atingido{
+        width: 100%;
+        height: initial;
+    }
+    #tela-jogar #opcoes-resposta .imagem-nivel{
+        width: 100%;
+        margin-top: 30px;
+    }
+}

@@ -1,6 +1,14 @@
 #tela-usuario{
     display: none;
+    width: 100vw;
+    height: 100vh;
     color: white;
+    background-color: white;
+    transition: display 300ms ease-in;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 #tela-usuario .container{
     margin: 45px auto 10px auto;
