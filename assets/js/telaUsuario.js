@@ -51,15 +51,17 @@ function jogarQuizz(indice){
 
 // -----------------------------------------------------------------------funções de renderização
 function renderizarMeusQuizz(){
-    for(var i = 0; i < meusQuizz.length; i++) renderizarQuizz(meusQuizz[i],i);
+    var containerQuizzes = document.querySelector('#tela-usuario div.container');
+    containerQuizzes.innerHTML = '';
+    containerQuizzes.innerHTML = "<div id='criar-quizz' onclick='criarQuizz()'>Novo Quizz<ion-icon name='add-circle'></ion-icon></div>";
+    for(var i = 0; i < meusQuizz.length; i++) renderizarQuizz(meusQuizz[i],i,containerQuizzes);
 }
 
-function renderizarQuizz(quizz,posicao){
+function renderizarQuizz(quizz,posicao,containerQuizzes){
     var div = document.createElement('div');
     div.classList.add('quizz');
     div.setAttribute('onclick','jogarQuizz(' + posicao +')');
     div.innerText = quizz.title;
 
-    var containerQuizzes = document.querySelector('#tela-usuario div.container');
     containerQuizzes.appendChild(div);
 }
