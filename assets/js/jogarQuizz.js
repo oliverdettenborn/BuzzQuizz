@@ -46,6 +46,8 @@ function verificarFinalDoJogo(){
     }
 }
 
+
+//--------------------------------------------------------------------- fim do quizz
 function finalJogo(){
     var score = calcularScore();
     renderizarPontuacao(score);
@@ -53,6 +55,50 @@ function finalJogo(){
     var nivelAtingido = verificarNivel(score);
 
     renderizarDescricaoNivel(nivelAtingido);
+
+    resertarJogo();
+
+}
+
+function calcularScore(){
+    var pontuação = Math.floor((acertos / perguntasQuizz.length * 100));
+    return pontuação;
+}
+
+function verificarNivel(score){
+    for(var i = 0; i < niveisQuizz.length; i++){
+        var minimo = niveisQuizz[i]["acerto-minimo"];
+        var maximo = niveisQuizz[i]["acerto-maximo"];
+        if(minimo <= score && score <= maximo){
+            return niveisQuizz[i];
+        }
+    }
+}
+
+function resertarJogo(){
+    quizzJogando = [];
+    acertos = 0;
+    numeroPeguntaAtual = 0;
+    perguntasQuizz = [];
+    niveisQuizz = [];
+    respostaCerta = null;
+    acertos = 0;
+}
+
+
+
+//---------------------------------------------------------------------- renderização tela final
+function renderizarPontuacao(score){
+    renderizarBotaoHome();
+    var caixaHeader = document.querySelector('#pergunta-atual');
+    caixaHeader.innerHTML = "Você acertou " + acertos + ' de ' + perguntasQuizz.length + ' perguntas! <br>';
+    caixaHeader.innerHTML += 'Score: ' + score + '%';
+}
+
+function renderizarBotaoHome(){
+    var iconeHome = document.querySelector('#tela-jogar header ion-icon');
+    iconeHome.setAttribute('onclick','trocarDeTela("#tela-jogar","#tela-usuario")');
+    iconeHome.style.color = '#fff';
 
 }
 
@@ -80,27 +126,6 @@ function renderizarDescricaoNivel(nivel){
 
 }
 
-function calcularScore(){
-    var pontuação = Math.floor((acertos / perguntasQuizz.length * 100));
-    return pontuação;
-}
-
-function verificarNivel(score){
-    for(var i = 0; i < niveisQuizz.length; i++){
-        var minimo = niveisQuizz[i]["acerto-minimo"];
-        var maximo = niveisQuizz[i]["acerto-maximo"];
-        if(minimo <= score && score <= maximo){
-            return niveisQuizz[i];
-        }
-    }
-}
-
-//----------------------------------------------------------------------------------- renderização tela final
-function renderizarPontuacao(score){
-    var caixaHeader = document.querySelector('#pergunta-atual');
-    caixaHeader.innerHTML = "Você acertou " + acertos + ' de ' + perguntasQuizz.length + ' perguntas! <br>';
-    caixaHeader.innerHTML += 'Score: ' + score + '%';
-}
 
 //------------------------------------------------------------------------------------ renderização das perguntas
 function renderizarJogo(){
