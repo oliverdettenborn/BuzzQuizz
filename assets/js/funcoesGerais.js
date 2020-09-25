@@ -1,13 +1,16 @@
 function trocarDeTela(telaAtual,proximaTela){
     var desabilitarTela = document.querySelector(telaAtual);
     desabilitarTela.style.opacity = '0';
-    var habilitarTela = document.querySelector(proximaTela);
-    habilitarTela.style.opacity = '1';
-
+    var carregando = document.querySelector('#carregando');
+    carregando.style.display = 'flex';
+    
     setTimeout(function(){
+        carregando.style.display = 'none';
+        var habilitarTela = document.querySelector(proximaTela);
+        habilitarTela.style.opacity = '1';
         habilitarTela.style.display = "block";
         desabilitarTela.style.display = "none"; 
-    }, 1000);
+    },3500);
 }
 
 function pegarValorInput(identificador){
