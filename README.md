@@ -23,19 +23,21 @@
 
 
 ### Features
--[x] Layout Desktop e Mobile<br>
--[x] Tela de Login<br>
--[x] Tela do usuário<br>
--[x] Tela para criação de um quizz<br>
--[x] Número de perguntas por quizz ilimitada<br>
--[x] Número de nível ilimitado, todos com espeço para um título, descrição e uma imagem<br>
--[x] Quatro opções de resposta com imagem para cada pergunta<br>
--[x] Tela para o usuário jogar seus quizzes criados<br>
--[x] Possibilidade de exclusão de um quizz<br>
--[x] Botões de navegação entre as telas<br>
--[x] Transições entre as tela são animadas<br>
--[ ] Possibilidade de alteração de um quizz<br>
--[ ] Exportação do quizz para outras plataformas<br>
+- [x] Layout Desktop e Mobile<br>
+- [x] Tela de Login<br>
+- [x] Tela do usuário<br>
+- [x] Tela para criação de um quizz<br>
+- [x] Número de perguntas por quizz ilimitada<br>
+- [x] Número de nível ilimitado, todos com espeço para um título, descrição e uma imagem<br>
+- [x] Quatro opções de resposta com imagem para cada pergunta<br>
+- [x] Tela para o usuário jogar seus quizzes criados<br>
+- [x] Possibilidade de exclusão de um quizz<br>
+- [x] Botões de navegação entre as telas<br>
+- [x] Transições entre as tela são animadas<br>
+- [ ] Alterar um quizz já criado
+- [ ] Escolher o modelo de quizz a ser criado: O quanto você sabe sobre...?, O quanto você é ...?, Quem é você em...?
+- [ ] Escolher o estilo de apresentação do quizz (cores, fontes e layout)
+- [ ] Exportar um quizz criado para outras plataformas
 
 
 ### Deploy
@@ -66,11 +68,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Autor
 ---
-<img style="border-radius: 50%;" src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/>
+<img style="border-radius: 50px;" src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;"/>
 <br>
-<sub><b>Thalia Roberta</b></sub>
-<br>
-Feito por Thalia Roberta Dettenborn 👋🏽 Entre em contato!<br>
+Feito por Thalia Roberta Dettenborn 👋🏽 Entre em contato!<br><br>
 <a href="https://www.linkedin.com/in/thaliarobertad/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> 
 <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
 <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
