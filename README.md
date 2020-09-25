@@ -48,9 +48,9 @@
 ### 🛠 Tecnologias
 <section id="tecnologias">
 As seguintes linguagens foram usadas na construção do projeto:
-- [HTML5]<br>
-- [CSS3]<br>
-- [Javascript]<br>
+- [HTML5]()<br>
+- [CSS3]()<br>
+- [Javascript]()<br>
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -76,6 +76,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <sub><b>Thalia Roberta</b></sub>
 </a><br>
 Feito por Thalia Roberta Dettenborn 👋🏽 Entre em contato!<br>
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/thaliarobertad/)<br>
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:thalia.born@gmail.com)
-</section>
+[![Linkedin Badge](https://www.linkedin.com/in/thaliarobertad/)<br>
+[![Gmail Badge](mailto:thalia.born@gmail.com)
