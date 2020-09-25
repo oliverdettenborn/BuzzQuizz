@@ -5,7 +5,6 @@ var perguntasQuizz = [];
 var niveisQuizz = [];
 var respostaCerta = null;
 var acertos = 0;
-var quantPerguntas = perguntasQuizz.length;
 
 function jogarEsseQuizz(quizzSelecionado){
     quizzJogando = quizzSelecionado;
@@ -37,7 +36,7 @@ function mudarCorCaixaOpcao(){
 }
 
 function verificarFinalDoJogo(){
-    var terminouAsPerguntas = (numeroPeguntaAtual + 1) === quantPerguntas;
+    var terminouAsPerguntas = (numeroPeguntaAtual + 1) === perguntasQuizz.length;
 
     if(terminouAsPerguntas){
         finalJogo();
@@ -48,28 +47,58 @@ function verificarFinalDoJogo(){
 }
 
 function finalJogo(){
-    console.log("chegou ao final do jogo",acertos);
-
     var score = calcularScore();
     renderizarPontuacao(score);
 
     var nivelAtingido = verificarNivel(score);
 
+    renderizarDescricaoNivel(nivelAtingido);
+
+}
+
+function renderizarDescricaoNivel(nivel){
+    var caixaOpcoes= document.querySelector('#opcoes-resposta');
+    caixaOpcoes.innerHTML = "";
+
+    var caixaNivel = document.createElement('div');
+    caixaNivel.classList.add('nivel-atingido');
+
+    var tituloNivel = document.createElement('h3');
+    tituloNivel.innerText = nivel.titulo;
+    caixaNivel.appendChild(tituloNivel);
+
+    var descricaoDoNivel = document.createElement('p');
+    descricaoDoNivel.innerText = nivel.descricao;
+    caixaNivel.appendChild(descricaoDoNivel);
+
+    var imagemNivel = document.createElement('img');
+    imagemNivel.classList.add('imagem-nivel')
+    imagemNivel.setAttribute('src',nivel.link.toLowerCase());
+
+    caixaOpcoes.appendChild(caixaNivel);
+    caixaOpcoes.appendChild(imagemNivel);
+
 }
 
 function calcularScore(){
-    var pontuação = Math.floor(acertos / quantPerguntas);
+    var pontuação = Math.floor((acertos / perguntasQuizz.length * 100));
     return pontuação;
 }
 
 function verificarNivel(score){
-    
+    for(var i = 0; i < niveisQuizz.length; i++){
+        var minimo = niveisQuizz[i]["acerto-minimo"];
+        var maximo = niveisQuizz[i]["acerto-maximo"];
+        if(minimo <= score && score <= maximo){
+            return niveisQuizz[i];
+        }
+    }
 }
 
 //----------------------------------------------------------------------------------- renderização tela final
 function renderizarPontuacao(score){
     var caixaHeader = document.querySelector('#pergunta-atual');
-    caixaHeader.innerHTML = "Você acertou " + acertos + ' de ' + quantPerguntas + ' perguntas! <br>';
+    caixaHeader.innerHTML = "Você acertou " + acertos + ' de ' + perguntasQuizz.length + ' perguntas! <br>';
     caixaHeader.innerHTML += 'Score: ' + score + '%';
 }
 
