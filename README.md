@@ -4,9 +4,7 @@
 
 # BuzzQuizz
 
-<br>
-![license](https://img.shields.io/github/license/thaliadettenborn/BuzzQuizz?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/thaliadettenborn/BuzzQuizz) ![last commit](https://img.shields.io/github/last-commit/thaliadettenborn/BuzzQuizz?style=flat-square) ![issues](https://img.shields.io/github/package-json/v/thaliadettenborn/BuzzQuizz?style=flat-square) ![forks](https://img.shields.io/github/forks/thaliadettenborn/BuzzQuizz?style=flat-square)
-<br>
+![license](https://img.shields.io/github/license/thaliadettenborn/BuzzQuizz?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/thaliadettenborn/BuzzQuizz) ![last commit](https://img.shields.io/github/last-commit/thaliadettenborn/BuzzQuizz?style=flat-square) ![forks](https://img.shields.io/github/forks/thaliadettenborn/BuzzQuizz?style=flat-square)
 
 ## Descrição do Projeto
 <p>Ferramenta para criação de um quizz de 1 resposta certa e 3 erradas</p>
